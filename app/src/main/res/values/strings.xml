@@ -1,0 +1,31 @@
+<resources>
+  <string name="app_name">EFCS</string>
+  <string name="btn_humidity_lbl">HUMIDITY</string>
+  <string name="btn_temperature_lbl">TEMPERATURE</string>
+  <string name="msg_title">Messages</string>
+  <string name="msg_txt_lbl">No messages</string>
+  <string name="humidity_send_msg">Fetching humidity sensorData data…</string>
+  <string name="humidity_send_error_msg">No humidity sensorData found</string>
+  <string name="sensor_data_receive_error_msg">No sensorData data received</string>
+  <string name="sensor_data_receive_msg">Sensor data received</string>
+  <string name="temperature_send_msg">Fetching temperature sensorData data…</string>
+  <string name="temperature_send_error_msg">No temperature sensorData found</string>
+  <string name="temp_graph_title">Temperature</string>
+  <string name="temp_min_title">Low limit</string>
+  <string name="temp_max_title">High limit</string>
+  <string name="lbl_temperature_serie">Temperature</string>
+  <string name="lbl_high_limit">High Limit</string>
+  <string name="lbl_low_limit">Low Limit</string>
+  <string name="hum_graph_title">Humidity</string>
+  <string name="lbl_humidity_serie">humidity</string>
+  <string name="btn_apply_lbl">APPLY</string>
+  <string name="lbl_pref">Préférences</string>
+  <string name="lbl_options">Options</string>
+  <string name="lbl_z4_limit">High limit zone 4</string>
+  <string name="lbl_z3_limit">High limit zone 3</string>
+  <string name="lbl_z2_limit">High limit zone 2</string>
+  <string name="lbl_z1_limit">High limit zone 1</string>
+  <string name="lbl_temp_low_limit">Temp low limit</string>
+  <string name="lbl_btn_save">SAVE</string>
+  <string name="lbl_btn_cancel">CANCEL</string>
+</resources>

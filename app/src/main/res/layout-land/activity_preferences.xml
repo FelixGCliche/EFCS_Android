@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.PreferencesActivity">
+
+  <ImageView
+      android:id="@+id/app_logo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="24dp"
+      android:src="@drawable/app_logo"
+      app:layout_constraintBottom_toTopOf="@id/card_options"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="@id/guideline_v35"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_v35"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.35"/>
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/card_options"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      app:cardBackgroundColor="@color/colorPrimaryDark"
+      app:cardCornerRadius="8dp"
+      app:cardElevation="4dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="@id/guideline_v35"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/lbl_options"
+          style="@style/TextAppearance.AppCompat.Headline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="24dp"
+          android:text="@string/lbl_options"
+          android:textColor="@color/colorAccent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/lbl_auto_save"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="24dp"
+          android:text="Enable auto save"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="@id/lbl_options"
+          app:layout_constraintTop_toBottomOf="@id/lbl_options" />
+
+      <Switch
+          android:id="@+id/switch_auto_save"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="24dp"
+          app:layout_constraintBottom_toBottomOf="@id/lbl_auto_save"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="@id/lbl_auto_save" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/card_preferences"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_margin="8dp"
+      android:layout_marginBottom="8dp"
+      app:cardBackgroundColor="@color/colorPrimaryDark"
+      app:cardCornerRadius="8dp"
+      app:cardElevation="4dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="@id/guideline_v35"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline_card_v50"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent="0.5" />
+
+      <TextView
+          android:id="@+id/lbl_pref"
+          style="@style/TextAppearance.AppCompat.Headline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="24dp"
+          android:text="@string/lbl_pref"
+          android:textColor="@color/colorAccent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/lbl_temp_low_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="@string/lbl_temp_low_limit"
+          app:layout_constraintLeft_toLeftOf="@id/lbl_pref"
+          app:layout_constraintTop_toBottomOf="@id/lbl_pref" />
+
+      <TextView
+          android:id="@+id/lbl_temp_high_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="Temp high limit"
+          app:layout_constraintLeft_toLeftOf="@id/lbl_pref"
+          app:layout_constraintTop_toBottomOf="@id/lbl_temp_low_limit" />
+
+      <TextView
+          android:id="@+id/lbl_z1_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="@string/lbl_z1_limit"
+          app:layout_constraintLeft_toLeftOf="@id/lbl_pref"
+          app:layout_constraintTop_toBottomOf="@id/lbl_temp_high_limit" />
+
+      <TextView
+          android:id="@+id/lbl_z2_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="@string/lbl_z2_limit"
+          app:layout_constraintLeft_toLeftOf="@id/lbl_pref"
+          app:layout_constraintTop_toBottomOf="@id/lbl_z1_limit" />
+
+      <TextView
+          android:id="@+id/lbl_z3_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="@string/lbl_z3_limit"
+          app:layout_constraintLeft_toLeftOf="@id/lbl_pref"
+          app:layout_constraintTop_toBottomOf="@id/lbl_z2_limit" />
+
+      <TextView
+          android:id="@+id/lbl_z4_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:layout_marginBottom="8dp"
+          android:text="@string/lbl_z4_limit"
+          app:layout_constraintLeft_toLeftOf="@id/lbl_pref"
+          app:layout_constraintTop_toBottomOf="@id/lbl_z3_limit" />
+
+      <TextView
+          android:id="@+id/txt_temp_low_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:textColor="#b48ead"
+          app:layout_constraintBaseline_toBaselineOf="@id/lbl_temp_low_limit"
+          app:layout_constraintLeft_toLeftOf="@id/guideline_card_v50" />
+
+      <TextView
+          android:id="@+id/txt_temp_high_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:textColor="#b48ead"
+          app:layout_constraintBaseline_toBaselineOf="@id/lbl_temp_high_limit"
+          app:layout_constraintLeft_toLeftOf="@id/guideline_card_v50" />
+
+      <TextView
+          android:id="@+id/txt_z1_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:textColor="#b48ead"
+          app:layout_constraintBaseline_toBaselineOf="@id/lbl_z1_limit"
+          app:layout_constraintLeft_toLeftOf="@id/guideline_card_v50" />
+
+      <TextView
+          android:id="@+id/txt_z2_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:textColor="#b48ead"
+          app:layout_constraintBaseline_toBaselineOf="@id/lbl_z2_limit"
+          app:layout_constraintLeft_toLeftOf="@id/guideline_card_v50" />
+
+      <TextView
+          android:id="@+id/txt_z3_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:textColor="#b48ead"
+          app:layout_constraintBaseline_toBaselineOf="@id/lbl_z3_limit"
+          app:layout_constraintLeft_toLeftOf="@id/guideline_card_v50" />
+
+      <TextView
+          android:id="@+id/txt_z4_limit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:textColor="#b48ead"
+          app:layout_constraintBaseline_toBaselineOf="@id/lbl_z4_limit"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="@id/guideline_card_v50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+  <Button
+      android:id="@+id/btn_save"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginBottom="8dp"
+      android:background="@drawable/rounded_btn_ripple"
+      android:text="@string/lbl_btn_save"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/card_options" />
+
+  <Button
+      android:id="@+id/btn_cancel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginRight="8dp"
+      android:background="@drawable/rounded_btn_ripple"
+      android:text="@string/lbl_btn_cancel"
+      app:layout_constraintBottom_toBottomOf="@+id/btn_save"
+      app:layout_constraintEnd_toStartOf="@+id/card_preferences"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toEndOf="@+id/btn_save"
+      app:layout_constraintTop_toTopOf="@+id/btn_save"
+      app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.TemperatureActivity">
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/hum_graph_card"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_margin="8dp"
+      app:cardBackgroundColor="@color/colorPrimaryDark"
+      app:cardCornerRadius="8dp"
+      app:cardElevation="4dp"
+      app:layout_constraintBottom_toBottomOf="@id/guideline_v70"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/hum_graph_title"
+          style="@style/TextAppearance.AppCompat.Headline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="24dp"
+          android:text="@string/temp_graph_title"
+          android:textColor="@color/colorAccent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <com.jjoe64.graphview.GraphView
+          android:id="@+id/hum_graph"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_margin="16dp"
+          android:background="@color/colorPrimaryDark"
+
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/hum_graph_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_v70"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.70" />
+
+  <TextView
+      android:id="@+id/hum_max_lbl"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/temp_max_title"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/guideline_v70" />
+
+  <ImageButton
+      android:id="@+id/btn_high_limit_decrease"
+      android:layout_width="64dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="16dp"
+      android:background="@drawable/btn_ripple"
+      android:padding="4dp"
+      android:src="@drawable/remove_white_24dp"
+      app:layout_constraintBottom_toBottomOf="@+id/input_high_limit"
+      app:layout_constraintEnd_toStartOf="@+id/input_high_limit"
+      app:layout_constraintRight_toLeftOf="@+id/input_high_limit"
+      app:layout_constraintTop_toTopOf="@+id/input_high_limit" />
+
+  <EditText
+      android:id="@+id/input_high_limit"
+      android:layout_width="72dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      android:gravity="center_horizontal"
+      android:inputType="numberDecimal"
+      android:textAlignment="center"
+      android:textColor="@color/text"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/hum_max_lbl" />
+
+  <ImageButton
+      android:id="@+id/btn_high_limit_increase"
+      android:layout_width="64dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="16dp"
+      android:background="@drawable/btn_ripple"
+      android:padding="4dp"
+      android:src="@drawable/add_white_24dp"
+      app:layout_constraintBottom_toBottomOf="@+id/input_high_limit"
+      app:layout_constraintLeft_toRightOf="@+id/input_high_limit"
+      app:layout_constraintStart_toEndOf="@+id/input_high_limit"
+      app:layout_constraintTop_toTopOf="@+id/input_high_limit" />
+
+  <TextView
+      android:id="@+id/hum_min_lbl"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:text="@string/temp_min_title"
+      app:layout_constraintBottom_toTopOf="@+id/input_low_limit"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageButton
+      android:id="@+id/btn_low_limit_decrease"
+      android:layout_width="64dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="16dp"
+      android:background="@drawable/btn_ripple"
+      android:padding="4dp"
+      android:src="@drawable/remove_white_24dp"
+      app:layout_constraintBottom_toBottomOf="@+id/input_low_limit"
+      app:layout_constraintEnd_toStartOf="@+id/input_low_limit"
+      app:layout_constraintRight_toLeftOf="@+id/input_low_limit"
+      app:layout_constraintTop_toTopOf="@+id/input_low_limit" />
+
+  <EditText
+      android:id="@+id/input_low_limit"
+      android:layout_width="72dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      android:layout_marginBottom="8dp"
+      android:gravity="center_horizontal"
+      android:textAlignment="center"
+      android:inputType="numberDecimal"
+      android:textColor="@color/text"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent" />
+
+  <ImageButton
+      android:id="@+id/btn_low_limit_increase"
+      android:layout_width="64dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="16dp"
+      android:background="@drawable/btn_ripple"
+      android:padding="4dp"
+      android:src="@drawable/add_white_24dp"
+      app:layout_constraintBottom_toBottomOf="@+id/input_low_limit"
+      app:layout_constraintStart_toEndOf="@+id/input_low_limit"
+      app:layout_constraintTop_toTopOf="@+id/input_low_limit"
+      app:layout_constraintVertical_bias="0.466" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

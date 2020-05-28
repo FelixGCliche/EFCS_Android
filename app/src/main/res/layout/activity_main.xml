@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+  <ImageView
+      android:id="@+id/app_logo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/app_logo"
+      app:layout_constraintBottom_toTopOf="@id/btn_humidity"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/btn_humidity"
+      android:layout_width="128dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:background="@drawable/rounded_btn_ripple"
+      android:text="@string/btn_humidity_lbl"
+      app:layout_constraintBottom_toTopOf="@+id/guideline_v35"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@id/btn_temperature"
+      app:layout_constraintTop_toBottomOf="@id/app_logo" />
+
+  <Button
+      android:id="@+id/btn_temperature"
+      android:layout_width="128dp"
+      android:layout_height="wrap_content"
+      android:background="@drawable/rounded_btn_ripple"
+      android:text="@string/btn_temperature_lbl"
+      app:layout_constraintBottom_toBottomOf="@+id/btn_humidity"
+      app:layout_constraintLeft_toRightOf="@id/btn_humidity"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/btn_humidity" />
+
+  <ProgressBar
+      android:id="@+id/api_progress_bar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="invisible"
+      app:layout_constraintBottom_toTopOf="@+id/guideline_v35"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btn_humidity" />
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_v35"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.5" />
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/msg_card"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_margin="8dp"
+      app:cardBackgroundColor="@color/colorPrimaryDark"
+      app:cardCornerRadius="8dp"
+      app:cardElevation="4dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/guideline_v35">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/msg_title"
+          style="@style/TextAppearance.AppCompat.Headline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="24dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/msg_title"
+          android:textColor="@color/colorAccent"
+          app:layout_constraintBottom_toTopOf="@+id/msg_txt"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/msg_txt"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/msg_txt"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_margin="16dp"
+          android:background="@drawable/msg_style"
+          android:padding="16dp"
+          android:scrollbars="vertical"
+          android:text="@string/msg_txt_lbl"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/msg_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
